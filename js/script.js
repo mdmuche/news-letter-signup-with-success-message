@@ -7,6 +7,7 @@ const flex = document.querySelector(".flex-row");
 const inputField = document.getElementById("email-address");
 const required = document.querySelector(".required");
 const mobileImg = document.querySelector(".mobile-img");
+const registeredEmail = document.querySelector(".email-registered");
 
 const init = function () {
   modal.classList.add("hide");
@@ -14,6 +15,7 @@ const init = function () {
 init();
 
 function validateEmail() {
+  const email = inputField.value;
   //   console.log(inputField);
   //   console.log(btn);
   if (
@@ -34,6 +36,7 @@ function validateEmail() {
 
     inputField.style.color = "var(--Dark-Slate-Grey)";
     inputField.style.border = "1px solid var(--grey)";
+    registeredEmail.textContent = email;
     btn.disabled = false;
     required.classList.add("required");
     return true;
